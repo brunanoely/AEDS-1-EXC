@@ -1,22 +1,19 @@
 #include <stdio.h>
 
-double fat(double a){
-    if (a < 2)
-        return 1;
-    return a * fat(a - 1);
-}
+float somatorio (int n) {
+    float soma = 0.0, aux = 0.0;
 
-double somatorio(double n){
-    double soma = 1;
-    for(int i = 1; i <= n; i++){
-            soma += 1.0/fat(i);
+    for (int fat = 2; fat <= n; fat++) {
+        aux += 1.0/fat * (fat - 1);
     }
+    soma = 1.0 + 1.0/1.0 + aux;
     return soma;
 }
 
-int main(){
- double a;
- scanf("%lf",&a);
-
- printf("%.2lf",somatorio(a));
+int main() {
+    
+    int n;
+    scanf("%d", &n);
+    printf("%.2f", somatorio(n));
+    return 0;
 }
