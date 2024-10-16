@@ -2,19 +2,21 @@
 #include <math.h>
 
 int main() {
-    int n, sum=0;
-    scanf("%d", &n);
-    int vector[n];
+    int N;
+    scanf("%d", &N);
+    int vet[N];
 
-    for(int i = 0; i<n; i++) {
-        scanf("%d", &vector[i]);
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &vet[i]);
     }
 
-    for(int i = n-1; i>=0; i--) {
-        sum += vector[i] * pow(2, n-1-i);
+    int soma = 0;
+
+    for (int i = 0; i < N; i++) {
+        int cont = N - 1 - i;
+        soma += vet[i] * pow(2, cont);
     }
-
-    printf("%d", sum);
-
+    
+    printf("%d\n", soma);
     return 0;
 }
